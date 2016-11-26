@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "graphql server for ableian services",
   "main": "src/index.js",
+  "engines": {
+    "node": "7.2.0"
+  },
   "scripts": {
     "start": "node src/index.js",
     "start-babel": "babel-node src/index.js --presets es2015",

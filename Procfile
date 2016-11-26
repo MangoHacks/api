@@ -1,1 +1,1 @@
-web: node_modules/foreman/nf.js start
+web: node src/index.js

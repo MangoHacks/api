@@ -6,11 +6,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const message = require('./data/messages');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 // app.use(bodyParser({urlextended: false}));
-
+app.set('port', PORT);
 app.get('/', (req, res) => res.send('Welcome to Abelian'));
 app.get('/messages', (req, res) => res.json(messages));
 
