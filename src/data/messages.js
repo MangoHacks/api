@@ -23,4 +23,4 @@ const messages = [
   },
 ];
 
-export default messages;
+module.exports = messages;
