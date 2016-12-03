@@ -17,6 +17,8 @@
   "author": "Ashley Narcisse",
   "license": "ISC",
   "dependencies": {
+    "apiai": "^3.0.3",
+    "axios": "^0.15.3",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-graphql": "^0.6.1",

@@ -1,17 +1,14 @@
-// import express from 'express';
-// import bodyParser from 'body-parser';
-// import messages from './data/messages'
-
 const express = require('express');
 const bodyParser = require('body-parser');
-const messages = require('./data/messages');
-
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-// app.use(bodyParser({urlextended: false}));
-app.set('port', PORT);
+//express-session
+// app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+app.use(bodyParser({urlextended: false}));
+
 app.get('/', (req, res) => res.send('Welcome to Abelian'));
-app.get('/messages', (req, res) => res.json(messages));
+app.use('/api', require('./api'));
+app.use('/graphql', require('./graphql'));
 
 app.listen(PORT, () => console.log(`Parallel API running on port ${PORT}`));

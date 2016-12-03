@@ -7,10 +7,10 @@ const messages = [
       _id: 1,
       name: 'Smart Human',
     },
-    location: {
-      latitude: 48.864601,
-      longitude: 2.398704
-    },
+    // location: {
+    //   latitude: 48.864601,
+    //   longitude: 2.398704
+    // },
   },
   {
     _id: Math.round(Math.random() * 1000000),
