@@ -1,5 +1,6 @@
 const graphql = require('graphql');
 const graphqlHTTP = require('express-graphql');
+const {Root} = require('./Types')
 
 const {
   GraphQLSchema,
@@ -8,17 +9,9 @@ const {
 } = graphql;
 
 const schema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'RootQueryType',
-    fields: {
-      messages: {
-        type: GraphQLString,
-        resolve() {
-          return 'world';
-        }
-      }
-    }
-  })
+  query: Root,
+  // mutation,
+  // subscription
 });
 
 module.exports = graphqlHTTP({

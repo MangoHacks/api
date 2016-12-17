@@ -10,12 +10,9 @@ function jsonify(headers, rows){
 }
 
 module.exports = (req, res) => {
-	rescue.analytics({
-	    perspective: 'interval',
-	    restrict_kind: 'productivity'
-	})
-	.then(d => d.data)
-	.then(d => jsonify(d.row_headers, d.rows))
-	.then(d => res.json(d))
-	.catch(err => res.json({err}))
+	rescue.summary({})
+		.then(d => d.data)
+		.then(d => jsonify(d.row_headers, d.rows))
+		.then(d => res.json(d))
+		.catch(err => res.json({err}))
 };
