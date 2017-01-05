@@ -4,7 +4,7 @@ const GitHubStrategy = require('passport-github2').Strategy;
 passport.use(new GitHubStrategy({
     clientID: '09a41c5e51631b38b44b',
     clientSecret: '2c94f50a8624615401aab69cbefc9132e478db81',
-    callbackURL: "http://127.0.0.1:3000/auth/github/callback"
+    callbackURL: "http://mango-api.herokuapp.com/api/auth/callback"
   }, (accessToken, refreshToken, profile, done) => {
   	console.log(`User data from github: \n ${profile}`)
     //create or find user
