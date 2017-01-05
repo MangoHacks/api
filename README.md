@@ -1,8 +1,8 @@
 
 ## API
 
-`[GET|POST] - /api/bot`
-> Handles communication with API.ai for Natural language processing
+`[GET] - /api/auth/github`
+> >make oAuth2 request to github to ogin and authenticate user;
 
 - user
 	first
@@ -13,10 +13,8 @@
 	3rd Party,
 		LinkedIn, Github
 
-
-
 /user - [GET, POST, PUT] - (view/register/login)
-/actions
+/actions - email
 	/confirm
 		- [additional information to fill in for profile]
 	/busInfo
