@@ -3,6 +3,6 @@ const api = express.Router();
 const {login, callback} = require('./middleware/github');
 
 api.get('/auth/github', login);
-api.get('/auth/github/callback', callback, (req, res) => res.json({msg: 'login callback'}));
+api.get('/auth/callback', callback, (req, res) => res.json({msg: 'login callback'}));
 
 module.exports = api;
