@@ -1,7 +1,7 @@
 {
-  "name": "graphql",
+  "name": "mango-api",
   "version": "1.0.0",
-  "description": "graphql server for ableian services",
+  "description": "backend api server for mangohacks",
   "main": "src/index.js",
   "engines": {
     "node": "7.2.0"
@@ -23,7 +23,11 @@
     "express": "^4.14.0",
     "express-graphql": "^0.6.1",
     "graphql": "^0.8.2",
-    "node-rescuetime": "^0.1.1"
+    "node-rescuetime": "^0.1.1",
+    "passport": "^0.3.2",
+    "passport-github": "^1.1.0",
+    "passport-github2": "^0.1.10",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

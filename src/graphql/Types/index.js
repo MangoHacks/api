@@ -11,8 +11,6 @@ const {
 const {getUsers, getUserById} = require('../../api/data/users');
 
 
-
-
 const UserType = new GraphQLObjectType({
   name: 'User',
   description: 'A user',
@@ -27,53 +25,6 @@ const UserType = new GraphQLObjectType({
     }
   }
 });
-
-const StatusType = new GraphQLObjectType({
-  name: 'Status',
-  description: 'An ableian status metric',
-  fields: {
-    id: { 
-      type: GraphQLID,
-      description: 'The status id.'
-    },
-    title: {
-      type: GraphQLString,
-      description: 'The status title.'
-    },
-    description: {
-      type: GraphQLString,
-      description: 'The status description.'
-    },
-    viewed: {
-      type:GraphQLBoolean,
-      description: 'Whether or not the user has viewed the status.'
-    }
-  }
-});
-
-const MessageType = new GraphQLObjectType({
-  name: 'Message',
-  description: 'A chat bot message',
-  fields: {
-    id: { 
-      type: GraphQLID,
-      description: 'The status id.'
-    },
-    title: {
-      type: GraphQLString,
-      description: 'The status title.'
-    },
-    description: {
-      type: GraphQLString,
-      description: 'The status description.'
-    },
-    viewed: {
-      type:GraphQLBoolean,
-      description: 'Whether or not the user has viewed the status.'
-    }
-  }
-});
-
 const Root = new GraphQLObjectType({
   name: 'Root',
   description: 'The root query type',
@@ -91,22 +42,7 @@ const Root = new GraphQLObjectType({
         }
       },
       resolve: (_, args) => getUserById(args.id)
-    },
-    status: {
-      type: StatusType,
-      resolve: () => new Promise((resolve) => {
-        resolve({
-          id: 1,
-          title: 'hello world',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt provident voluptatum beatae cumque natus consequuntur cupiditate facilis ratione, dolorem magni voluptate, vero molestias omnis quisquam aut, quae odio. Hic, accusantium.',
-          viewed: false
-        });
-      })
-    },
-    // messages: {
-    //   type: GraphQLString,
-    //   resolve: () => 'world'
-    // }
+    }
   }
 });
 

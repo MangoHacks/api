@@ -7,8 +7,8 @@ const app = express();
 // app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 app.use(bodyParser({urlextended: false}));
 
-app.get('/', (req, res) => res.send('Welcome to Abelian'));
+app.get('/', (req, res) => res.send('Welcome to Mangohacks'));
 app.use('/api', require('./api'));
 app.use('/graphql', require('./graphql'));
 
-app.listen(PORT, () => console.log(`Parallel API running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Mango API running on port ${PORT}`));
