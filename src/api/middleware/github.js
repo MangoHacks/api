@@ -18,7 +18,7 @@ passport.deserializeUser(function(user, done) {
 passport.use(new GitHubStrategy({
     clientID: '09a41c5e51631b38b44b',
     clientSecret: '2c94f50a8624615401aab69cbefc9132e478db81',
-    callbackURL: "http://localhost:5000/api/auth/callback"
+    callbackURL: "http://mango-api.herokuapp.com/api/auth/callback"
   }, (accessToken, refreshToken, profile, done) => {
   	console.log(`User data from github: \n `, profile.username);
     //create or find user
