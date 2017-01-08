@@ -4,6 +4,7 @@ App:
     host: localhost
     port: 27017
     dbName: customers
-  credit:
-    initialLimit: 100
-    initialDays: 1 
+  github:
+    clientID: '09a41c5e51631b38b44b'
+    clientSecret: '2c94f50a8624615401aab69cbefc9132e478db81'
+    callbackURL: 'http://localhost:5000/api/auth/callback'
