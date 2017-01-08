@@ -11,6 +11,7 @@ const User = mongoose.Schema({
   profile_img: String,
   instutution: String,
   major: String,
+  status: String,
   local : {
       email : String,
       password : String,
