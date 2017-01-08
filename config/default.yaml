@@ -1,0 +1,9 @@
+App:
+  mongoUrl: localhost/mango
+  dbConfig:
+    host: localhost
+    port: 27017
+    dbName: customers
+  credit:
+    initialLimit: 100
+    initialDays: 1 
