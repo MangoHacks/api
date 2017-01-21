@@ -7,6 +7,7 @@ const github_opts = config.get('App.github');
 
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => {
+  console.log(user);
   User.findById(id, (err, user) => done(err, user));
 });
 

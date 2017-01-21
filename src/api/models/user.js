@@ -13,30 +13,46 @@ const User = mongoose.Schema({
     type: String,
     // default: 
   },
+  password : String,
   instutution: String,
   major: String,
-  status: {
+  role: {
     type: String,
-    enum: ['registered', 'confirmed', 'attended'],
-    default: 'registered'
+    enum: ['user', 'admin'],
+    default: 'user'
   },
   local : {
-      email : String,
-      password : String,
+    email : String,
+    password : String,
   },
   github : {
-      id : String,
-      token: String,
-      username : String,
-      profileUrl: String
+    id : String,
+    token: String,
+    username : String,
+    profileUrl: String
   }
+});
+
+User.pre('save', function(next) {
+  const user = this;
+
+  if (!user.isModified('password')) return next();
+  genSalt(8, (err, salt) => {
+      if (err) return next(err);
+      bcrypt.hash(user.password, salt, (err, hash) => {
+          if (err) return next(err);
+          user.password = hash;
+          next();
+      });
+  });
 });
 
 User.methods.generateHash = (password) => {
   return hashSync(password, getSaltSync(8), null);
 };
 
-User.methods.validatePassword = (password) => {
+User.methods.validatePassword = function(password, valid) {
+  console.log('validating ', password, this);
   return compareSync(password, this.local.password);
 };
 

@@ -7,7 +7,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import config from 'config';
 import api from './api';
-
+mongoose.set('debug', true);
 // const configs = config.get('default');
 const PORT = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGODB_URI || 'mongodb://localhost:27017/mango'; //configs.mongUrl
