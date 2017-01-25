@@ -25,9 +25,9 @@ const update = (req, res) => {
   const {id} = req.body;
 
   Attendee.findByIdAndUpdate(id, req.body, (err, attendee) =>  {
-    if(err) return res.status(404).json({msg: 'User id is missins'});
+    if(err) return res.status(404).json({msg: 'Attendee id is missins'});
     if(!attendee) {
-      return res.status(404).json({message: `Course with id ${id} can not be found.`});
+      return res.status(404).json({message: `Attendee with id ${id} can not be found.`});
     }
 
     res.json(attendee);
